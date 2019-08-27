@@ -4,6 +4,10 @@ use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
 
 mod account_state;
 use account_state::AccountState as PanelAccountState;
+mod verify_request;
+use verify_request::VerifyRequest as PanelVerifyRequest;
+mod generate_authorization;
+use generate_authorization::GenerateAuthorization as PanelGenerateAuthorization;
 
 pub struct Model {
     body: BodyPanel,
@@ -51,6 +55,7 @@ impl Renderable<Model> for Model {
                 <nav class="menu">
                     <button onclick=|_| Msg::NavigateTo(BodyPanel::PanelAccountState)>{ "Account State" }</button>
                     <button onclick=|_| Msg::NavigateTo(BodyPanel::PanelVerifyRequest)>{ "Verify Request" }</button>
+                    <button onclick=|_| Msg::NavigateTo(BodyPanel::PanelGenerateAuthorization)>{ "Generate Authorization" }</button>
                 </nav>
                 <div>
                     {self.body.view()}
@@ -70,12 +75,12 @@ impl Renderable<Model> for BodyPanel {
             },
             BodyPanel::PanelVerifyRequest => html! {
                 <>
-                    {"This corresponds to route 'b'"}
+                    <PanelVerifyRequest />
                 </>
             },
             BodyPanel::PanelGenerateAuthorization => html! {
                 <>
-                    {"This corresponds to route 'c'"}
+                    <PanelGenerateAuthorization />
                 </>
             },
             BodyPanel::PathNotFound(ref path) => html! {

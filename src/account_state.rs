@@ -173,7 +173,7 @@ impl Component for AccountState {
 
 impl Renderable<AccountState> for AccountState {
     fn view(&self) -> Html<Self> {
-        html! {
+        html! {          
             <div>
                 <div class="account">
                     { "Your Account: " }
@@ -216,9 +216,9 @@ impl AccountState {
 impl Renderable<AccountState> for Token {
     fn view(&self) -> Html<AccountState> {
         html! {
-            <div> 
-                <span>{ self.tokenHash.clone() }</span>
-                <span>{ "Verify" }</span> 
+            <div class="item"> 
+                <span class="caption">{ self.tokenHash.clone() }</span>
+                <span class="action">{ "Verify" }</span> 
             </div>
         }
     }
@@ -227,9 +227,9 @@ impl Renderable<AccountState> for Token {
 impl Renderable<AccountState> for Identity {
     fn view(&self) -> Html<AccountState> {
         html! {
-            <div> 
-                <span>{ self.identityHash.clone() }</span>  
-                <span>{ "Generate" }</span> 
+            <div class="item"> 
+                <span class="caption">{ self.identityHash.clone() }</span>  
+                <span class="action">{ "Generate" }</span> 
             </div>
         }
     }
