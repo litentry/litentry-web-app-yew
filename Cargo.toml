@@ -1,0 +1,13 @@
+[package]
+name = "litentry-web-app"
+version = "0.1.0"
+authors = ["Daogang Tang <daogangtang@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+log = "0.4"
+web_logger = "0.1"
+stdweb = "0.4"
+serde = { version = "1.0", features = ["derive"] }
+yew = { path = "../yew" }
+failure = "0.1"
