@@ -17,3 +17,6 @@ cargo web start
 ```
 
 then, just visit `http://127.0.0.1:8000` in browser.
+
+## First version design
+![fist version design](https://raw.githubusercontent.com/litentry/litentry-web-app/master/docs/LitentryWeb.png)
